@@ -79,11 +79,13 @@
     <Content Include="App_Data\database_log.ldf">
       <DependentUpon>database.mdf</DependentUpon>
     </Content>
-    <Content Include="customerdetails.aspx" />
-    <Content Include="Default.aspx" />
-    <Content Include="frmInvoice.aspx" />
-    <Content Include="frmLogin.aspx" />
+    <Content Include="Web Forms\customerdetails.aspx" />
+    <Content Include="Web Forms\customerLogin.aspx" />
+    <Content Include="Web Forms\Default.aspx" />
+    <Content Include="Web Forms\frmInvoice.aspx" />
+    <Content Include="Web Forms\frmLogin.aspx" />
     <Content Include="Global.asax" />
+    <Content Include="Web Forms\HomePage.aspx" />
     <Content Include="Models\marg.png" />
     <Content Include="Models\ninjaTeam.bmp" />
     <Content Include="Models\pepp.jfif" />
@@ -98,39 +100,59 @@
       <DependentUpon>PizzaEntity.edmx</DependentUpon>
       <LastGenOutput>PizzaEntity.cs</LastGenOutput>
     </Content>
+    <Content Include="Web Forms\StaffLogin.aspx" />
+    <Content Include="Web Forms\staff_orders.aspx" />
+    <Content Include="Web Forms\UserAdmin.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="customerdetails.aspx.cs">
+    <Compile Include="Web Forms\customerdetails.aspx.cs">
       <DependentUpon>customerdetails.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="customerdetails.aspx.designer.cs">
+    <Compile Include="Web Forms\customerdetails.aspx.designer.cs">
       <DependentUpon>customerdetails.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Default.aspx.cs">
+    <Compile Include="Web Forms\customerLogin.aspx.cs">
+      <DependentUpon>customerLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Web Forms\customerLogin.aspx.designer.cs">
+      <DependentUpon>customerLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Web Forms\Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Default.aspx.designer.cs">
+    <Compile Include="Web Forms\Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
-    <Compile Include="frmInvoice.aspx.cs">
+    <Compile Include="Web Forms\frmInvoice.aspx.cs">
       <DependentUpon>frmInvoice.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="frmInvoice.aspx.designer.cs">
+    <Compile Include="Web Forms\frmInvoice.aspx.designer.cs">
       <DependentUpon>frmInvoice.aspx</DependentUpon>
     </Compile>
-    <Compile Include="frmLogin.aspx.cs">
+    <Compile Include="Web Forms\frmLogin.aspx.cs">
       <DependentUpon>frmLogin.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="frmLogin.aspx.designer.cs">
+    <Compile Include="Web Forms\frmLogin.aspx.designer.cs">
       <DependentUpon>frmLogin.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Web Forms\HomePage.aspx.cs">
+      <DependentUpon>HomePage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Web Forms\HomePage.aspx.designer.cs">
+      <DependentUpon>HomePage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LoginTable.cs">
+      <DependentUpon>PizzaEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="Order.cs">
       <DependentUpon>PizzaEntity.tt</DependentUpon>
@@ -151,6 +173,30 @@
       <DependentUpon>PizzaEntity.edmx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Web Forms\StaffLogin.aspx.cs">
+      <DependentUpon>StaffLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Web Forms\StaffLogin.aspx.designer.cs">
+      <DependentUpon>StaffLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="StaffLoginDB.cs">
+      <DependentUpon>PizzaEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Web Forms\staff_orders.aspx.cs">
+      <DependentUpon>staff_orders.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Web Forms\staff_orders.aspx.designer.cs">
+      <DependentUpon>staff_orders.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Web Forms\UserAdmin.aspx.cs">
+      <DependentUpon>UserAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Web Forms\UserAdmin.aspx.designer.cs">
+      <DependentUpon>UserAdmin.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

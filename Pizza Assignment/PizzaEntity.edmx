@@ -4,55 +4,145 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="databaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="databaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="LoginTable">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Username" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="EmailAdress" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="CustomerName" Type="varchar" MaxLength="50" />
+          <Property Name="CustomerSurname" Type="varchar" MaxLength="50" />
+          <Property Name="CustomerPhoneNumber" Type="varchar" MaxLength="50" />
+        </EntityType>
         <EntityType Name="Order">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="CustomerName" Type="varchar" MaxLength="50" />
-          <Property Name="CustomerSurname" Type="varchar" MaxLength="50" />
-          <Property Name="CustomerPhoneNumber" Type="varchar" MaxLength="50" />
           <Property Name="CustomerTotal" Type="smallmoney" />
           <Property Name="OrderDetails" Type="varchar" MaxLength="50" />
+          <Property Name="CustomerID" Type="int" />
         </EntityType>
+        <EntityType Name="StaffLoginDB">
+          <Key>
+            <PropertyRef Name="StaffID" />
+          </Key>
+          <Property Name="StaffID" Type="int" Nullable="false" />
+          <Property Name="Password" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <Association Name="FK_Order_To_LoginTable">
+          <End Role="LoginTable" Type="Self.LoginTable" Multiplicity="0..1" />
+          <End Role="Order" Type="Self.Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LoginTable">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Order">
+              <PropertyRef Name="CustomerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="databaseModelStoreContainer">
+          <EntitySet Name="LoginTable" EntityType="Self.LoginTable" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Order" EntityType="Self.Order" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="StaffLoginDB" EntityType="Self.StaffLoginDB" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Order_To_LoginTable" Association="Self.FK_Order_To_LoginTable">
+            <End Role="LoginTable" EntitySet="LoginTable" />
+            <End Role="Order" EntitySet="Order" />
+          </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="databaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="databaseEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="LoginTables" EntityType="databaseModel.LoginTable" />
+          <EntitySet Name="Orders" EntityType="databaseModel.Order" />
+          <AssociationSet Name="FK_Order_To_LoginTable" Association="databaseModel.FK_Order_To_LoginTable">
+            <End Role="LoginTable" EntitySet="LoginTables" />
+            <End Role="Order" EntitySet="Orders" />
+          </AssociationSet>
+          <EntitySet Name="StaffLoginDBs" EntityType="databaseModel.StaffLoginDB" />
+        </EntityContainer>
+        <EntityType Name="LoginTable">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Username" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="EmailAdress" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CustomerName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CustomerSurname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CustomerPhoneNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Orders" Relationship="databaseModel.FK_Order_To_LoginTable" FromRole="LoginTable" ToRole="Order" />
+        </EntityType>
         <EntityType Name="Order">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="CustomerName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="CustomerSurname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="CustomerPhoneNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="CustomerTotal" Type="Decimal" Precision="10" Scale="4" />
           <Property Name="OrderDetails" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CustomerID" Type="Int32" />
+          <NavigationProperty Name="LoginTable1" Relationship="databaseModel.FK_Order_To_LoginTable" FromRole="Order" ToRole="LoginTable" />
         </EntityType>
-        <EntityContainer Name="databaseEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Orders" EntityType="Self.Order" />
-        </EntityContainer>
+        <Association Name="FK_Order_To_LoginTable">
+          <End Type="databaseModel.LoginTable" Role="LoginTable" Multiplicity="0..1" />
+          <End Type="databaseModel.Order" Role="Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LoginTable">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Order">
+              <PropertyRef Name="CustomerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="StaffLoginDB">
+          <Key>
+            <PropertyRef Name="StaffID" />
+          </Key>
+          <Property Name="Password" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="StaffID" Type="Int32" Nullable="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="databaseModelStoreContainer" CdmEntityContainer="databaseEntities">
+          <EntitySetMapping Name="LoginTables">
+            <EntityTypeMapping TypeName="databaseModel.LoginTable">
+              <MappingFragment StoreEntitySet="LoginTable">
+                <ScalarProperty Name="CustomerPhoneNumber" ColumnName="CustomerPhoneNumber" />
+                <ScalarProperty Name="CustomerSurname" ColumnName="CustomerSurname" />
+                <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+                <ScalarProperty Name="EmailAdress" ColumnName="EmailAdress" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="Orders">
             <EntityTypeMapping TypeName="databaseModel.Order">
               <MappingFragment StoreEntitySet="Order">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
-                <ScalarProperty Name="CustomerSurname" ColumnName="CustomerSurname" />
-                <ScalarProperty Name="CustomerPhoneNumber" ColumnName="CustomerPhoneNumber" />
-                <ScalarProperty Name="CustomerTotal" ColumnName="CustomerTotal" />
+                <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
                 <ScalarProperty Name="OrderDetails" ColumnName="OrderDetails" />
+                <ScalarProperty Name="CustomerTotal" ColumnName="CustomerTotal" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StaffLoginDBs">
+            <EntityTypeMapping TypeName="databaseModel.StaffLoginDB">
+              <MappingFragment StoreEntitySet="StaffLoginDB">
+                <ScalarProperty Name="StaffID" ColumnName="StaffID" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

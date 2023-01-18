@@ -25,6 +25,8 @@ namespace Pizza_Assignment
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<LoginTable> LoginTables { get; set; }
         public virtual DbSet<Order> Orders { get; set; }
+        public virtual DbSet<StaffLoginDB> StaffLoginDBs { get; set; }
     }
 }

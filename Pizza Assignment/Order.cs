@@ -15,10 +15,10 @@ namespace Pizza_Assignment
     public partial class Order
     {
         public int Id { get; set; }
-        public string CustomerName { get; set; }
-        public string CustomerSurname { get; set; }
-        public string CustomerPhoneNumber { get; set; }
         public Nullable<decimal> CustomerTotal { get; set; }
         public string OrderDetails { get; set; }
+        public Nullable<int> CustomerID { get; set; }
+    
+        public virtual LoginTable LoginTable1 { get; set; }
     }
 }
