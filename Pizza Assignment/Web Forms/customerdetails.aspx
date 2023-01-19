@@ -24,7 +24,7 @@
         </p>
         <p>
             Total Amount :
-            <asp:Label ID="lblTotal" runat="server"></asp:Label>
+            £<asp:Label ID="lblTotal" runat="server"></asp:Label>
         </p>
         <p>
             <asp:Button ID="confirmButton" runat="server" OnClick="confirmButton_Click" Text="Confirm Payment" />

@@ -28,7 +28,7 @@ namespace Pizza_Assignment
             newLogin.CustomerSurname = surnameTB.Text;
             newLogin.CustomerPhoneNumber = phoneNumTB.Text;
 
-            
+            nameTB.Text =  Session["CustomerName"]; 
 
             db.LoginTables.Add(newLogin);
             db.SaveChanges();

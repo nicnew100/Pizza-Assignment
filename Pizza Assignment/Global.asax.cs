@@ -13,13 +13,15 @@ namespace Pizza_Assignment
         {
 
         }
-    
+
         protected void Session_Start(Object sender, EventArgs e)
         {
             Session["total"] = "0";
             Session["OrderDetails"] = "";
             Session["CustomerName"] = "";
             Session["CustomerPhoneNumber"] = "";
+            Session["CustomerID"] = "0";
+            
         }
     
     

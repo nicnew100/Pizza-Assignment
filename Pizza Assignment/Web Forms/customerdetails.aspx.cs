@@ -20,9 +20,11 @@ namespace Pizza_Assignment
         {
             nameLbl.Text = String.Format("{0}", Session["CustomerName"]);
           
-         lblTotal.Text = String.Format("{0}", Session["total"]);
+         lblTotal.Text = String.Format("{0:C}", Session["total"].ToString());
 
             lblOrderDetails.Text = String.Format("{0}",Session["OrderDetails"]);
+
+            nameLbl.Text= String.Format("{","}", Session["CustomerName"]);
         }
 
         protected void confirmButton_Click(object sender, EventArgs e)
@@ -35,12 +37,12 @@ namespace Pizza_Assignment
 
             newOrder.CustomerTotal = decimal.Parse(lblTotal.Text);
 
-           
+
+
+
+
+
             
-
-
-           
-
             newOrder.OrderDetails = lblOrderDetails.Text;
 
             dbOrders.Add(newOrder);
