@@ -11,7 +11,8 @@
         <p>
             <strong>Customer Details</strong></p>
         <p>
-            &nbsp;</p>
+            <asp:Label ID="nameLbl" runat="server"></asp:Label>
+        </p>
         <p>
             &nbsp;</p>
         <p>

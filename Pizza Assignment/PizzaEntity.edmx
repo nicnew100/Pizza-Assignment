@@ -5,6 +5,13 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="databaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AdminLogin">
+          <Key>
+            <PropertyRef Name="AdminID" />
+          </Key>
+          <Property Name="AdminID" Type="int" Nullable="false" />
+          <Property Name="Password" Type="nchar" MaxLength="10" />
+        </EntityType>
         <EntityType Name="LoginTable">
           <Key>
             <PropertyRef Name="ID" />
@@ -22,7 +29,7 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="CustomerTotal" Type="smallmoney" />
+          <Property Name="CustomerTotal" Type="decimal" Precision="18" Scale="0" />
           <Property Name="OrderDetails" Type="varchar" MaxLength="50" />
           <Property Name="CustomerID" Type="int" />
         </EntityType>
@@ -46,6 +53,7 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="databaseModelStoreContainer">
+          <EntitySet Name="AdminLogin" EntityType="Self.AdminLogin" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="LoginTable" EntityType="Self.LoginTable" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Order" EntityType="Self.Order" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="StaffLoginDB" EntityType="Self.StaffLoginDB" Schema="dbo" store:Type="Tables" />
@@ -66,6 +74,7 @@
             <End Role="Order" EntitySet="Orders" />
           </AssociationSet>
           <EntitySet Name="StaffLoginDBs" EntityType="databaseModel.StaffLoginDB" />
+          <EntitySet Name="AdminLogins" EntityType="databaseModel.AdminLogin" />
         </EntityContainer>
         <EntityType Name="LoginTable">
           <Key>
@@ -85,7 +94,7 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="CustomerTotal" Type="Decimal" Precision="10" Scale="4" />
+          <Property Name="CustomerTotal" Type="Decimal" Precision="18" Scale="0" />
           <Property Name="OrderDetails" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="CustomerID" Type="Int32" />
           <NavigationProperty Name="LoginTable1" Relationship="databaseModel.FK_Order_To_LoginTable" FromRole="Order" ToRole="LoginTable" />
@@ -108,6 +117,13 @@
           </Key>
           <Property Name="Password" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
           <Property Name="StaffID" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AdminLogin">
+          <Key>
+            <PropertyRef Name="AdminID" />
+          </Key>
+          <Property Name="AdminID" Type="Int32" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -143,6 +159,14 @@
               <MappingFragment StoreEntitySet="StaffLoginDB">
                 <ScalarProperty Name="StaffID" ColumnName="StaffID" />
                 <ScalarProperty Name="Password" ColumnName="Password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AdminLogins">
+            <EntityTypeMapping TypeName="databaseModel.AdminLogin">
+              <MappingFragment StoreEntitySet="AdminLogin">
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="AdminID" ColumnName="AdminID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

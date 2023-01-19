@@ -9,21 +9,53 @@ namespace Pizza_Assignment
 {
     public partial class Default : System.Web.UI.Page
     {
-        protected void Page_Load(object sender, EventArgs e)
+        protected void cokeRadButton_CheckedChanged(object sender, EventArgs e)
         {
-           
+            if (cokeRadButton.Checked)
+            {
+                pizzaImage0.ImageUrl = "~/Models/coke.jfif";
+            }
+        }
 
+        protected void fantaRadButton_CheckedChanged(object sender, EventArgs e)
+        {
+            if (fantaRadButton.Checked)
+            {
+                pizzaImage0.ImageUrl = "~/Models/fanta.jpg";
+            }
+        }
+
+        protected void liptonRadButton_CheckedChanged(object sender, EventArgs e)
+        {
+            if (liptonRadButton.Checked)
+            {
+                pizzaImage0.ImageUrl = "~/Models/lipton.jpg";
+            }
         }
 
         protected void margRadButton_CheckedChanged(object sender, EventArgs e)
         {
             if (margRadButton.Checked)
             {
-                pizzaImage.ImageUrl = "models/marg.png";
+                pizzaImage.ImageUrl = "~/Models/marg.png";
             }
 
         }
+        protected void pepperoniRadButton_CheckedChanged(object sender, EventArgs e)
+        {
+            if (pepperoniRadButton.Checked)
+            {
+                pizzaImage.ImageUrl = "~/Models/pepp.jfif";
+            }
+        }
 
+            protected void Page_Load(object sender, EventArgs e)
+            {
+           
+
+            }
+
+       
        
         
 
@@ -33,12 +65,13 @@ namespace Pizza_Assignment
             String OrderDetails = Session["OrderDetails"].ToString();
 
             if (margRadButton.Checked)
-            { OrderDetails += "margharita "; 
+            { OrderDetails += "Margharita ";
+                
             }
             
             if (pepperoniRadButton.Checked)
             {
-                OrderDetails += "pepperoni ";
+                OrderDetails += "Pepperoni ";
             }
 
             if (cokeRadButton.Checked)
@@ -63,12 +96,12 @@ namespace Pizza_Assignment
             
             if (margRadButton.Checked)
             {
-                total = 4.50;
+                total = 3.50;
             }
 
             else
             {
-                total = 5.00;
+                total = 4.00;
             }
 
             if (cokeRadButton.Checked)
@@ -91,16 +124,11 @@ namespace Pizza_Assignment
 
         }
 
-        protected void pepperoniRadButton_CheckedChanged(object sender, EventArgs e)
-        {
-            if (pepperoniRadButton.Checked)
-            {
-                pizzaImage.ImageUrl = "models/pepp.jfif";
-            }
+       
 
             
 
-        }
+        
 
         
 
@@ -120,6 +148,8 @@ namespace Pizza_Assignment
 
    
         }
+
+       
     }
 
 }

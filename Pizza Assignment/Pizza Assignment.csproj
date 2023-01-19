@@ -75,10 +75,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Web Forms\adminHomePage.aspx" />
+    <Content Include="Web Forms\adminlogin.aspx" />
     <Content Include="App_Data\database.mdf" />
     <Content Include="App_Data\database_log.ldf">
       <DependentUpon>database.mdf</DependentUpon>
     </Content>
+    <Content Include="Models\lipton.jpg" />
+    <Content Include="Models\coke.jfif" />
+    <Content Include="Models\fanta.jpg" />
     <Content Include="Web Forms\customerdetails.aspx" />
     <Content Include="Web Forms\customerLogin.aspx" />
     <Content Include="Web Forms\Default.aspx" />
@@ -87,9 +92,7 @@
     <Content Include="Global.asax" />
     <Content Include="Web Forms\HomePage.aspx" />
     <Content Include="Models\marg.png" />
-    <Content Include="Models\ninjaTeam.bmp" />
     <Content Include="Models\pepp.jfif" />
-    <Content Include="Models\pizza.jpg" />
     <Content Include="PizzaEntity.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>PizzaEntity.Context.cs</LastGenOutput>
@@ -106,6 +109,23 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Web Forms\adminHomePage.aspx.cs">
+      <DependentUpon>adminHomePage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Web Forms\adminHomePage.aspx.designer.cs">
+      <DependentUpon>adminHomePage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Web Forms\adminlogin.aspx.cs">
+      <DependentUpon>adminlogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Web Forms\adminlogin.aspx.designer.cs">
+      <DependentUpon>adminlogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminLogin.cs">
+      <DependentUpon>PizzaEntity.tt</DependentUpon>
+    </Compile>
     <Compile Include="Web Forms\customerdetails.aspx.cs">
       <DependentUpon>customerdetails.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

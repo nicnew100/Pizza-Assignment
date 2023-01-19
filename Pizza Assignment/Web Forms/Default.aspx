@@ -21,12 +21,12 @@
         <br />
         Pick a drink (optional)<br />
         <br />
-        <asp:RadioButton ID="cokeRadButton" runat="server" GroupName="drinks" Text="Coke" />
+        <asp:RadioButton ID="cokeRadButton" runat="server" GroupName="drinks" Text="Coke" OnCheckedChanged="cokeRadButton_CheckedChanged" />
 &nbsp;&nbsp;&nbsp; (£1.10)<asp:Image ID="pizzaImage0" runat="server" Height="76px" ImageAlign="Middle" style="margin-left: 365px; text-align: center;" Width="128px" />
         <br />
-        <asp:RadioButton ID="fantaRadButton" runat="server" GroupName="drinks" Text="Fanta" />
+        <asp:RadioButton ID="fantaRadButton" runat="server" GroupName="drinks" Text="Fanta" OnCheckedChanged="fantaRadButton_CheckedChanged" />
 &nbsp;&nbsp;&nbsp; (£1.10)<br />
-        <asp:RadioButton ID="liptonRadButton" runat="server" GroupName="drinks" Text="Lipton Ice Tea Peach" />
+        <asp:RadioButton ID="liptonRadButton" runat="server" GroupName="drinks" Text="Lipton Ice Tea Peach" OnCheckedChanged="liptonRadButton_CheckedChanged" />
 &nbsp;&nbsp; (£1.10)<br />
         <br />
         <br />

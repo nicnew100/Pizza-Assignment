@@ -28,5 +28,6 @@ namespace Pizza_Assignment
         public virtual DbSet<LoginTable> LoginTables { get; set; }
         public virtual DbSet<Order> Orders { get; set; }
         public virtual DbSet<StaffLoginDB> StaffLoginDBs { get; set; }
+        public virtual DbSet<AdminLogin> AdminLogins { get; set; }
     }
 }

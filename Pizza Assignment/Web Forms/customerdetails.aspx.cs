@@ -4,6 +4,11 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Data;
+using System.Data.SqlClient;
+
+
+    
 
 namespace Pizza_Assignment
 {
@@ -13,8 +18,8 @@ namespace Pizza_Assignment
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            //public decimal total = decimal.Parse(Session["total"]);
-
+            nameLbl.Text = String.Format("{0}", Session["CustomerName"]);
+          
          lblTotal.Text = String.Format("{0}", Session["total"]);
 
             lblOrderDetails.Text = String.Format("{0}",Session["OrderDetails"]);
@@ -27,8 +32,15 @@ namespace Pizza_Assignment
 
             var newOrder = new Order();
 
+
+            newOrder.CustomerTotal = decimal.Parse(lblTotal.Text);
+
+           
             
-            newOrder.CustomerTotal=decimal.Parse(lblTotal.Text);
+
+
+           
+
             newOrder.OrderDetails = lblOrderDetails.Text;
 
             dbOrders.Add(newOrder);

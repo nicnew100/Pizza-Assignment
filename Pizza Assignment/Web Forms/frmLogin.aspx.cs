@@ -11,7 +11,7 @@ namespace Pizza_Assignment
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         protected void okButt_Click(object sender, EventArgs e)
@@ -28,13 +28,14 @@ namespace Pizza_Assignment
             newLogin.CustomerSurname = surnameTB.Text;
             newLogin.CustomerPhoneNumber = phoneNumTB.Text;
 
-
+            
 
             db.LoginTables.Add(newLogin);
             db.SaveChanges();
 
             Response.Redirect("customerLogin.aspx");
-
+            
+            newLogin.CustomerName = String.Format("{0}", Session["CustomerName"]);
         }
     }
 }

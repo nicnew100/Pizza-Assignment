@@ -18,7 +18,8 @@ namespace Pizza_Assignment
         {
             Session["total"] = "0";
             Session["OrderDetails"] = "";
-                
+            Session["CustomerName"] = "";
+            Session["CustomerPhoneNumber"] = "";
         }
     
     

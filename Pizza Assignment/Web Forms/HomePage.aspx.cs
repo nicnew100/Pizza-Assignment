@@ -29,5 +29,10 @@ namespace Pizza_Assignment
         {
             Response.Redirect("customerLogin.aspx");
         }
+
+        protected void adminButt_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("adminlogin.aspx");
+        }
     }
 }
