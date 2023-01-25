@@ -75,6 +75,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="customerInvoice.aspx" />
     <Content Include="Web Forms\adminHomePage.aspx" />
     <Content Include="Web Forms\adminlogin.aspx" />
     <Content Include="App_Data\database.mdf" />
@@ -109,6 +110,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="customerInvoice.aspx.cs">
+      <DependentUpon>customerInvoice.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="customerInvoice.aspx.designer.cs">
+      <DependentUpon>customerInvoice.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Web Forms\adminHomePage.aspx.cs">
       <DependentUpon>adminHomePage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

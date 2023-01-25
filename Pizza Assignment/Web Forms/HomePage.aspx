@@ -17,11 +17,11 @@
             <p style="margin-left: 520px">
                 Nescot Pizza Order</p>
             <asp:Button ID="customerLoginTB" runat="server" style="font-size: xx-large" Text="Customer Login" OnClick="customerLoginTB_Click" Width="243px" />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:Button ID="customerSignUpTB" runat="server" OnClick="customerSignUpTB_Click" style="font-size: xx-large" Text="Customer Sign Up" Width="274px" />
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:Button ID="staffLoginTB" runat="server" style="font-size: xx-large" Text="Staff Login" OnClick="staffLoginTB_Click" />
-            &nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:Button ID="adminButt" runat="server" CssClass="auto-style1" Height="56px" OnClick="adminButt_Click" Text="Admin" Width="157px" />
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;<asp:Button ID="customerSignUpTB" runat="server" OnClick="customerSignUpTB_Click" style="font-size: xx-large" Text="Customer Sign Up" Width="274px" />
+            &nbsp;&nbsp;<asp:Button ID="staffLoginTB" runat="server" style="font-size: xx-large" Text="Staff Login" OnClick="staffLoginTB_Click" />
+            &nbsp;&nbsp;<asp:Button ID="adminButt" runat="server" CssClass="auto-style1" Height="56px" OnClick="adminButt_Click" Text="Admin" Width="157px" />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         </div>
     </form>
 </body>
