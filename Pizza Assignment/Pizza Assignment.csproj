@@ -76,6 +76,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="customerInvoice.aspx" />
+    <Content Include="Models\4-special-pizza-cartoon-clipart.jpg" />
     <Content Include="Web Forms\adminHomePage.aspx" />
     <Content Include="Web Forms\adminlogin.aspx" />
     <Content Include="App_Data\database.mdf" />
@@ -88,6 +89,7 @@
     <Content Include="Web Forms\customerdetails.aspx" />
     <Content Include="Web Forms\customerLogin.aspx" />
     <Content Include="Web Forms\Default.aspx" />
+    <Content Include="Web Forms\finalPage.aspx" />
     <Content Include="Web Forms\frmInvoice.aspx" />
     <Content Include="Web Forms\frmLogin.aspx" />
     <Content Include="Global.asax" />
@@ -154,6 +156,13 @@
     </Compile>
     <Compile Include="Web Forms\Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Web Forms\finalPage.aspx.cs">
+      <DependentUpon>finalPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Web Forms\finalPage.aspx.designer.cs">
+      <DependentUpon>finalPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Web Forms\frmInvoice.aspx.cs">
       <DependentUpon>frmInvoice.aspx</DependentUpon>

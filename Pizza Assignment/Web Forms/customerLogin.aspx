@@ -12,7 +12,7 @@
             Username (School ID)<asp:TextBox ID="usernameTB" runat="server" OnTextChanged="TextBox1_TextChanged"></asp:TextBox>
             <br />
             Password&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:TextBox ID="passwordTB" runat="server"></asp:TextBox>
+            <asp:TextBox ID="passwordTB" runat="server" TextMode="Password"></asp:TextBox>
             <br />
             <asp:Label ID="MessageBox" runat="server" Visible="False"></asp:Label>
             <br />

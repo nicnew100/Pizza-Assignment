@@ -20,13 +20,14 @@ namespace Pizza_Assignment
         {
 
 
-            lblTotal.Text = String.Format("{0:C}", Session["total"].ToString());
+            lblTotal.Text = String.Format("{0:C}", Session["total"]);
 
             lblOrderDetails.Text = (String) Session["OrderDetails"];
 
-           
+            nameLbl.Text = GridView1.Rows[GridView1.Rows.Count - 1].Cells[5].Text;
 
-          
+
+
         }
 
         protected void confirmButton_Click(object sender, EventArgs e)
@@ -34,12 +35,24 @@ namespace Pizza_Assignment
             databaseEntities db = new databaseEntities(); 
             var dbOrders = db.Orders;
             var newOrder = new Order();
-            newOrder.CustomerTotal = decimal.Parse(lblTotal.Text);
-            //newOrder.CustomerID = ;          
+            
+            try
+            { decimal dTotal = Decimal.Parse(lblTotal.Text.ToString().Remove(0, 1));
+
+                newOrder.CustomerTotal = dTotal;
+            }     
+            catch
+            {
+                Response.Redirect("finalPage.aspx");
+
+            }
+
+
             newOrder.OrderDetails = lblOrderDetails.Text;
             dbOrders.Add(newOrder);
             db.SaveChanges();
 
+            Response.Redirect("finalPage.aspx");
         }
 
         protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
@@ -51,9 +64,13 @@ namespace Pizza_Assignment
 
         protected void btnName_Click(object sender, EventArgs e)
         {
-            //nameLbl.Text = GridView1.SelectedValue.ToString();
-            int idx = 5;
-            nameLbl.Text = GridView1.SelectedRow.Cells[idx].Text;
+           
+            
+        }
+
+        protected void GridView1_SelectedIndexChanged1(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -12,7 +12,7 @@
             UserName<asp:TextBox ID="userTB" runat="server" style="text-align: justify"></asp:TextBox>
         </p>
         <p style="text-align: justify">
-            Password<asp:TextBox ID="passwordTB" runat="server"></asp:TextBox>
+            Password<asp:TextBox ID="passwordTB" runat="server" TextMode="Password"></asp:TextBox>
         </p>
         <p style="text-align: justify">
             E-mail<asp:TextBox ID="emailTB" runat="server"></asp:TextBox>

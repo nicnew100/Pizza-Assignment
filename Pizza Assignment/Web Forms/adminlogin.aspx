@@ -11,7 +11,7 @@
         <div>
             Admin Id<asp:TextBox ID="idTB" runat="server"></asp:TextBox>
             <br />
-            Password<asp:TextBox ID="passTB" runat="server"></asp:TextBox>
+            Password<asp:TextBox ID="passTB" runat="server" TextMode="Password"></asp:TextBox>
             <br />
             <asp:Button ID="okButt" runat="server" OnClick="okButt_Click" Text="Button" />
             <br />

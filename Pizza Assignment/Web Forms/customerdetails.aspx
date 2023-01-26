@@ -13,7 +13,7 @@
         <p>
             &nbsp;</p>
         <p>
-            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" AutoGenerateSelectButton="True" DataKeyNames="ID" DataSourceID="SqlDataSource1">
+            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" AutoGenerateSelectButton="True" DataKeyNames="ID" DataSourceID="SqlDataSource1" OnSelectedIndexChanged="GridView1_SelectedIndexChanged1" Visible="False">
                 <Columns>
                     <asp:BoundField DataField="ID" HeaderText="ID" InsertVisible="False" ReadOnly="True" SortExpression="ID" />
                     <asp:BoundField DataField="Username" HeaderText="Username" SortExpression="Username" />
@@ -28,17 +28,16 @@
             <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:databaseConnectionString2 %>" SelectCommand="SELECT * FROM [LoginTable]"></asp:SqlDataSource>
         </p>
         <p>
+            Thank you
             <asp:Label ID="nameLbl" runat="server" OnPreRender="Page_Load"></asp:Label>
-        </p>
+        &nbsp;for purchasing your pizza</p>
         <p>
-            <asp:Button ID="btnName" runat="server" OnClick="btnName_Click" Text="OK" />
-        </p>
+            &nbsp;</p>
         <p>
             Customer Order : <asp:Label ID="lblOrderDetails" runat="server"></asp:Label>
         </p>
         <p>
-            Total Amount :
-            £<asp:Label ID="lblTotal" runat="server"></asp:Label>
+            Total Amount : <asp:Label ID="lblTotal" runat="server"></asp:Label>
         </p>
         <p>
             <asp:Button ID="confirmButton" runat="server" OnClick="confirmButton_Click" Text="Confirm Payment" />

@@ -12,7 +12,7 @@
             Staff ID
             <asp:TextBox ID="idTB" runat="server"></asp:TextBox>
             <br />
-            Password<asp:TextBox ID="passwordTB" runat="server"></asp:TextBox>
+            Password<asp:TextBox ID="passwordTB" runat="server" TextMode="Password"></asp:TextBox>
             <br />
             <asp:Label ID="MessageBox" runat="server"></asp:Label>
             <br />

@@ -65,13 +65,13 @@ namespace Pizza_Assignment
             String OrderDetails = Session["OrderDetails"].ToString();
 
             if (margRadButton.Checked)
-            { OrderDetails += "Margharita ";
+            { OrderDetails = "Margharita ";
                 
             }
             
             if (pepperoniRadButton.Checked)
             {
-                OrderDetails += "Pepperoni ";
+                OrderDetails = "Pepperoni ";
             }
 
             if (cokeRadButton.Checked)
