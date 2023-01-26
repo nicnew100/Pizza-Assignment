@@ -9,8 +9,8 @@
           <Key>
             <PropertyRef Name="AdminID" />
           </Key>
-          <Property Name="AdminID" Type="int" Nullable="false" />
-          <Property Name="Password" Type="nchar" MaxLength="10" />
+          <Property Name="AdminID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Password" Type="nchar" MaxLength="20" />
         </EntityType>
         <EntityType Name="LoginTable">
           <Key>
@@ -20,8 +20,8 @@
           <Property Name="Username" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="EmailAdress" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="CustomerName" Type="varchar" MaxLength="50" />
-          <Property Name="CustomerSurname" Type="varchar" MaxLength="50" />
+          <Property Name="CustomerName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="CustomerSurname" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="CustomerPhoneNumber" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="Order">
@@ -84,8 +84,8 @@
           <Property Name="Username" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="EmailAdress" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="CustomerName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="CustomerSurname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CustomerName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CustomerSurname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="CustomerPhoneNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Orders" Relationship="databaseModel.FK_Order_To_LoginTable" FromRole="LoginTable" ToRole="Order" />
         </EntityType>
@@ -123,7 +123,7 @@
             <PropertyRef Name="AdminID" />
           </Key>
           <Property Name="AdminID" Type="Int32" Nullable="false" />
-          <Property Name="Password" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>

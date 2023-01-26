@@ -9,7 +9,7 @@
         <EntityTypeShape EntityType="databaseModel.Order" Width="1.5" PointX="3.625" PointY="0.75" />
         <AssociationConnector Association="databaseModel.FK_Order_To_LoginTable" />
         <EntityTypeShape EntityType="databaseModel.StaffLoginDB" Width="1.5" PointX="3.375" PointY="3.75" />
-        <EntityTypeShape EntityType="databaseModel.AdminLogin" Width="1.5" PointX="0.75" PointY="4.75" />
+        <EntityTypeShape EntityType="databaseModel.AdminLogin" Width="1.5" PointX="0.875" PointY="3.875" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
