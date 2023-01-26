@@ -7,9 +7,10 @@
     <title></title>
     <style type="text/css">
         .auto-style1 {
-            width: 394px;
-            height: 447px;
+            width: 266px;
+            height: 294px;
             float: left;
+            margin-left: 34px;
         }
         .auto-style2 {
             text-align: center;
@@ -23,6 +24,9 @@
             <br />
             Click here to order another pizza--------&gt;&nbsp;
             <asp:Button ID="butt" runat="server" OnClick="butt_Click" Text="Pizza Time!!!!" />
+            <br />
+            <br />
+            <asp:Button ID="logOutButton" runat="server" OnClick="logOutButton_Click" Text="Log Out" />
         </div>
     </form>
     <p class="auto-style2">

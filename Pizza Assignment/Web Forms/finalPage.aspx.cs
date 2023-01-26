@@ -18,5 +18,10 @@ namespace Pizza_Assignment.Web_Forms
         {
             Response.Redirect("Default.aspx");
         }
+
+        protected void logOutButton_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("homepage.aspx");
+        }
     }
 }
