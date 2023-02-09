@@ -22,6 +22,19 @@
         <div>
             Thank you for ordering you pizza.
             <br />
+            Your order number =
+            <asp:Label ID="customerID" runat="server"></asp:Label>
+            <br />
+            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="Id" DataSourceID="SqlDataSource1" Visible="False">
+                <Columns>
+                    <asp:BoundField DataField="Id" HeaderText="Id" InsertVisible="False" ReadOnly="True" SortExpression="Id" />
+                    <asp:BoundField DataField="CustomerTotal" HeaderText="CustomerTotal" SortExpression="CustomerTotal" />
+                    <asp:BoundField DataField="OrderDetails" HeaderText="OrderDetails" SortExpression="OrderDetails" />
+                    <asp:BoundField DataField="CustomerID" HeaderText="CustomerID" SortExpression="CustomerID" />
+                </Columns>
+            </asp:GridView>
+            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:databaseConnectionString2 %>" SelectCommand="SELECT * FROM [Order]"></asp:SqlDataSource>
+            <br />
             Click here to order another pizza--------&gt;&nbsp;
             <asp:Button ID="butt" runat="server" OnClick="butt_Click" Text="Pizza Time!!!!" />
             <br />

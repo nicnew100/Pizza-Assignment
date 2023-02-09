@@ -9,6 +9,9 @@ namespace Pizza_Assignment
 {
     public partial class Default : System.Web.UI.Page
     {
+        
+
+
         protected void cokeRadButton_CheckedChanged(object sender, EventArgs e)
         {
             if (cokeRadButton.Checked)
@@ -121,6 +124,8 @@ namespace Pizza_Assignment
 
             Session["total"] = total;
             lblTotal.Text = String.Format("{0:C}", total);
+            nextButton.Visible = true;
+
 
         }
 

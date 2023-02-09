@@ -15,7 +15,7 @@ namespace Pizza_Assignment
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+
 
 
         }
@@ -35,15 +35,14 @@ namespace Pizza_Assignment
         //        {
         //            while (oReader.Read())
         //            {
-        //                CustomerID = oReader["id"].ToString();
-                        
+        //                CustomerID = (Order)oReader["id"];
+
         //            }
 
         //            myConnection.Close();
         //        }
         //    }
         //    return CustomerID;
-        
 
 
 
@@ -51,6 +50,12 @@ namespace Pizza_Assignment
 
 
 
+
+
+
+
+
+        }
 
 
 
@@ -59,9 +64,3 @@ namespace Pizza_Assignment
 
 
 
-
-
-
-
-
-}

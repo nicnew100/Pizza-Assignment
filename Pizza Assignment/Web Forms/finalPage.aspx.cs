@@ -4,6 +4,10 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Configuration;
+using System.Data;
+using System.Data.SqlClient;
+
 
 namespace Pizza_Assignment.Web_Forms
 {
@@ -11,6 +15,9 @@ namespace Pizza_Assignment.Web_Forms
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            customerID.Text=GridView1.Rows[GridView1.Rows.Count - 1].Cells[0].Text;
+
+
 
         }
 

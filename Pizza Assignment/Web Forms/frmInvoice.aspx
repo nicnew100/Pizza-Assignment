@@ -34,6 +34,10 @@
                     <asp:Parameter Name="Id" Type="Int32" />
                 </UpdateParameters>
             </asp:SqlDataSource>
+            <asp:Button ID="Button1" runat="server" Text="Button" />
+&nbsp;<asp:Button ID="Button2" runat="server" Text="Button" />
+&nbsp;<asp:Button ID="Button3" runat="server" Text="Button" />
+&nbsp;<asp:Button ID="Button4" runat="server" Text="Button" />
             <br />
         </div>
     </form>

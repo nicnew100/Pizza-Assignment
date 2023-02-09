@@ -11,11 +11,11 @@
         }
     </style>
 </head>
-<body>
+<body style="width: 965px">
     <form id="form1" runat="server">
         <div style="text-align: left; font-size: xx-large">
-            <p style="margin-left: 520px">
-                Nescot Pizza Order</p>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Nescot Pizza Order<br />
+            <br />
             <asp:Button ID="customerLoginTB" runat="server" style="font-size: xx-large" Text="Customer Login" OnClick="customerLoginTB_Click" Width="243px" />
 &nbsp;&nbsp;<asp:Button ID="customerSignUpTB" runat="server" OnClick="customerSignUpTB_Click" style="font-size: xx-large" Text="Customer Sign Up" Width="274px" />
             &nbsp;&nbsp;<asp:Button ID="staffLoginTB" runat="server" style="font-size: xx-large" Text="Staff Login" OnClick="staffLoginTB_Click" />
