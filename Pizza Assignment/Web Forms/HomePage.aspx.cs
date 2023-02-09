@@ -17,7 +17,7 @@ namespace Pizza_Assignment
         protected void customerSignUpTB_Click(object sender, EventArgs e)
         {
             Response.Redirect("frmLogin.aspx");
-
+            //Redirecting to other web form pages
         }
 
         protected void staffLoginTB_Click(object sender, EventArgs e)

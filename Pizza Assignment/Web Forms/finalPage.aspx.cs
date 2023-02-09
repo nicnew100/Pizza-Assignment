@@ -16,7 +16,7 @@ namespace Pizza_Assignment.Web_Forms
         protected void Page_Load(object sender, EventArgs e)
         {
             customerID.Text=GridView1.Rows[GridView1.Rows.Count - 1].Cells[0].Text;
-
+            //prints the customer ID from the grid onto the label
 
 
         }

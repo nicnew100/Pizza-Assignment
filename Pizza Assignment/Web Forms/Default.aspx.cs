@@ -66,6 +66,7 @@ namespace Pizza_Assignment
         protected void confirmOrderButton_Click(object sender, EventArgs e)
         {
             String OrderDetails = Session["OrderDetails"].ToString();
+            //creating a variable to store the order that was picked into a session
 
             if (margRadButton.Checked)
             { OrderDetails = "Margharita ";
@@ -94,6 +95,7 @@ namespace Pizza_Assignment
             }
 
             Session["OrderDetails"]=OrderDetails;
+            //storing the orderdetails variable into a session
 
             double total = 0.0;
             
@@ -123,7 +125,11 @@ namespace Pizza_Assignment
             }
 
             Session["total"] = total;
+            //stroing the total variable into a session 
+
             lblTotal.Text = String.Format("{0:C}", total);
+            //converting string to currency
+
             nextButton.Visible = true;
 
 

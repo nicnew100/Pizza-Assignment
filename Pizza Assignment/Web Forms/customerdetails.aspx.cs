@@ -23,8 +23,10 @@ namespace Pizza_Assignment
             lblTotal.Text = String.Format("{0:C}", Session["total"]);
 
             lblOrderDetails.Text = (String) Session["OrderDetails"];
+            //retrieving the sessions used in the previous page to put into the labels
 
             nameLbl.Text = GridView1.Rows[GridView1.Rows.Count - 1].Cells[5].Text;
+            //putting information from the last record saved and cell 5 into a label
 
 
 
@@ -46,7 +48,7 @@ namespace Pizza_Assignment
                 Response.Redirect("finalPage.aspx");
 
             }
-
+            //the try catch is not nessacary however was used when testing so that the code wouldnt break if there was no total
 
             newOrder.OrderDetails = lblOrderDetails.Text;
             dbOrders.Add(newOrder);
